@@ -11,10 +11,10 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		85ADA5452D4ABC7800AB68EC /* Exceptions for "GHFollowers" folder in "GHFollowers" target */ = {
+		8555CE3B2D50ECD600D24921 /* Exceptions for "GHFollowers" folder in "GHFollowers" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Support/Info.plist,
+				Info.plist,
 			);
 			target = 85ADA5322D4ABC7700AB68EC /* GHFollowers */;
 		};
@@ -24,7 +24,7 @@
 		85ADA5352D4ABC7700AB68EC /* GHFollowers */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				85ADA5452D4ABC7800AB68EC /* Exceptions for "GHFollowers" folder in "GHFollowers" target */,
+				8555CE3B2D50ECD600D24921 /* Exceptions for "GHFollowers" folder in "GHFollowers" target */,
 			);
 			path = GHFollowers;
 			sourceTree = "<group>";
@@ -145,6 +145,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = KRZ925UDBM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GHFollowers/Info.plist;
@@ -172,6 +173,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = KRZ925UDBM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GHFollowers/Info.plist;
