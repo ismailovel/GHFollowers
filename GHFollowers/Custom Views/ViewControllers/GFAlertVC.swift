@@ -9,10 +9,10 @@ import UIKit
 
 class GFAlertVC: UIViewController {
     
-    let containerView = GFAlertContainerView()
-    let titleLabel = GFTitleLabel(textAlignment: .center, fontSize: 20)
-    let messageLabel = GFBodyLabel(textAlignment: .center)
-    let actionButton = GFButton(backgroundColor: .systemPink, title: "Ok")
+    let containerView   = GFAlertContainerView()
+    let titleLabel      = GFTitleLabel(textAlignment: .center, fontSize: 20)
+    let messageLabel    = GFBodyLabel(textAlignment: .center)
+    let actionButton    = GFButton(backgroundColor: .systemPink, title: "Ok")
     
     var alertTitle: String?
     var message: String?
@@ -22,8 +22,8 @@ class GFAlertVC: UIViewController {
     
     init(title: String, message: String, buttonTitle: String) {
         super.init(nibName: nil, bundle: nil)
-        self.alertTitle = title
-        self.message = message
+        self.alertTitle  = title
+        self.message     = message
         self.buttonTitle = buttonTitle
     }
     
@@ -35,6 +35,7 @@ class GFAlertVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.black.withAlphaComponent(0.75)
         view.addSubviews(containerView, titleLabel, actionButton, messageLabel)
+        
         configureContainerView()
         configureTitleLabel()
         configureActionButton()
@@ -76,7 +77,7 @@ class GFAlertVC: UIViewController {
     }
     
     func configureMessageLabel() {
-        messageLabel.text = message ?? "Unable to complete request"
+        messageLabel.text          = message ?? "Unable to complete request"
         messageLabel.numberOfLines = 4
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
         

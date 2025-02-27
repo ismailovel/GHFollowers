@@ -8,9 +8,10 @@
 import UIKit
 
 class NetworkManager {
-    static let shared = NetworkManager()
+    
+    static let shared   = NetworkManager()
     private let baseURL = "https://api.github.com"
-    let cache = NSCache<NSString, UIImage>()
+    let cache           = NSCache<NSString, UIImage>()
     
     private init() {}
     
@@ -23,7 +24,6 @@ class NetworkManager {
         }
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            
             if let _ = error {
                 completion(.failure(.unableToComplete))
                 return
@@ -40,9 +40,9 @@ class NetworkManager {
             }
             
             do {
-                let decoder = JSONDecoder()
+                let decoder                 = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let followers = try decoder.decode([Follower].self, from: data)
+                let followers               = try decoder.decode([Follower].self, from: data)
                 completion(.success(followers))
             } catch {
                 completion(.failure(.invalidData))
@@ -61,7 +61,6 @@ class NetworkManager {
         }
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            
             if let _ = error {
                 completion(.failure(.unableToComplete))
                 return
@@ -78,10 +77,10 @@ class NetworkManager {
             }
             
             do {
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                decoder.dateDecodingStrategy = .iso8601
-                let user = try decoder.decode(User.self, from: data)
+                let decoder                     = JSONDecoder()
+                decoder.keyDecodingStrategy     = .convertFromSnakeCase
+                decoder.dateDecodingStrategy    = .iso8601
+                let user                        = try decoder.decode(User.self, from: data)
                 completion(.success(user))
             } catch {
                 completion(.failure(.invalidData))
@@ -92,7 +91,6 @@ class NetworkManager {
     }
     
     func downloadImage(from urlString: String, completion: @escaping (UIImage?) -> Void) {
-        
         let cacheKey = NSString(string: urlString)
         
         if let image = cache.object(forKey: cacheKey) {
@@ -118,6 +116,7 @@ class NetworkManager {
             self.cache.setObject(image, forKey: cacheKey)
             completion(image)
         }
+        
         task.resume()
     }
 }
