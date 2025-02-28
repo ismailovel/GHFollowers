@@ -13,13 +13,13 @@ protocol UserInfoVCDelegate: AnyObject {
 
 class UserInfoVC: UIViewController {
     
-    let scrollView = UIScrollView()
-    let contentView = UIView()
-    
-    let headerView = UIView()
-    let itemViewOne = UIView()
-    let itemViewTwo = UIView()
-    let dateLabel = GFBodyLabel(textAlignment: .center)
+    let scrollView          = UIScrollView()
+    let contentView         = UIView()
+
+    let headerView          = UIView()
+    let itemViewOne         = UIView()
+    let itemViewTwo         = UIView()
+    let dateLabel           = GFBodyLabel(textAlignment: .center)
     var itemViews: [UIView] = []
     
     var username: String!
@@ -54,10 +54,10 @@ class UserInfoVC: UIViewController {
     func getUserInfo() {
         NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
             guard let self = self else { return }
-            
             switch result {
             case .success(let user):
                 DispatchQueue.main.async { self.configureUIElements(with: user) }
+                
             case .failure(let error):
                 self.presentGFAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
             }
@@ -72,7 +72,7 @@ class UserInfoVC: UIViewController {
     }
     
     func layoutUI() {
-        let padding: CGFloat = 20
+        let padding: CGFloat    = 20
         let itemHeight: CGFloat = 140
         
         itemViews = [headerView, itemViewOne, itemViewTwo, dateLabel]
