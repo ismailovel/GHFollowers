@@ -9,13 +9,13 @@ import UIKit
 
 class NetworkManager {
     
-    static let shared   = NetworkManager()
+    static let shared = NetworkManager()
     private let baseURL = "https://api.github.com"
-    let cache           = NSCache<NSString, UIImage>()
-    let decoder         = JSONDecoder()
+    let cache = NSCache<NSString, UIImage>()
+    let decoder = JSONDecoder()
     
     private init() {
-        decoder.keyDecodingStrategy  = .convertFromSnakeCase
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
         decoder.dateDecodingStrategy = .iso8601
     }
     

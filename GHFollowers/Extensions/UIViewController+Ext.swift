@@ -13,7 +13,7 @@ extension UIViewController {
     func presentGFAlert(title: String, message: String, buttonTitle: String) {
         let alertVC = GFAlertVC(title: title, message: message, buttonTitle: buttonTitle)
         alertVC.modalPresentationStyle = .overFullScreen
-        alertVC.modalTransitionStyle   = .crossDissolve
+        alertVC.modalTransitionStyle = .crossDissolve
         self.present(alertVC, animated: true)
     }
     
@@ -24,7 +24,7 @@ extension UIViewController {
             buttonTitle: "Ok"
         )
         alertVC.modalPresentationStyle = .overFullScreen
-        alertVC.modalTransitionStyle   = .crossDissolve
+        alertVC.modalTransitionStyle = .crossDissolve
         self.present(alertVC, animated: true)
     }
     

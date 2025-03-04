@@ -24,19 +24,19 @@ class GFButton: UIButton {
     }
     
     private func configure() {
-        configuration                               = .tinted()
-        configuration?.cornerStyle                  = .medium
-        translatesAutoresizingMaskIntoConstraints   = false
+        configuration = .tinted()
+        configuration?.cornerStyle = .medium
+        translatesAutoresizingMaskIntoConstraints = false
     }
     
     func set(color: UIColor, title: String, systemImageName: String) {
-        configuration?.baseBackgroundColor          = color
-        configuration?.baseForegroundColor          = color
-        configuration?.title                        = title
+        configuration?.baseBackgroundColor = color
+        configuration?.baseForegroundColor = color
+        configuration?.title = title
         
-        configuration?.image                        = UIImage(systemName: systemImageName)
-        configuration?.imagePadding                 = 6
-        configuration?.imagePlacement               = .leading
+        configuration?.image = UIImage(systemName: systemImageName)
+        configuration?.imagePadding = 6
+        configuration?.imagePlacement = .leading
     }
 }
 
